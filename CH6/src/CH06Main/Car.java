@@ -3,8 +3,17 @@ package CH06Main;
 public class Car {
 	String company;
 	String model;
-	int maxSpeed = 100;
+	int maxSpeed;
 	int speed;
+	
+	
+	Car(String company){
+		this(company, "", 100, 0);
+	}
+	
+	Car(String company, String model){
+		this(company, model, 100, 0);
+	}
 	
 	Car(String company, String mo, int max, int sp){
 		this.company = company;
@@ -15,11 +24,12 @@ public class Car {
 	}
 	
 	Car(){
-		company = "스프리건즈";
-		model = "메리호";
-		maxSpeed = 1000;
+		company = "";
+		model = "";
+		maxSpeed = 100;
 		speed = 0;
 	}
+	
 	
 	void ShowMaxSpeed() {
 		System.out.println("MaxSpeed : " + maxSpeed);
@@ -30,5 +40,10 @@ public class Car {
 		System.out.println("Model : " + model);
 		System.out.println("MaxSpeed : " + maxSpeed);
 		System.out.println("Speed : " + speed);
+	}
+	
+	void AddSpeed(int amount) {
+		speed += amount;
+		ShowInfo();
 	}
 }
